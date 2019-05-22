@@ -19,7 +19,7 @@ allows running R interactive sessions and loading VBmix as indicated below.
     R CMD build VBmix
     R CMD INSTALL VBmix_[VERSION_NUMBER].tar.gz
 
-##Usage
+## Usage
 
 In a R session, run:
 
