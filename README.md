@@ -1,4 +1,4 @@
-##Installation from Docker
+## Installation from Docker
 
 The Dockerfile at the repository root packages all dependency configuration. Simply run:
 
@@ -13,7 +13,7 @@ Then connecting in the container with
 
 allows running R interactive sessions and loading VBmix as indicated below.
 
-##Manual Installation
+## Manual Installation
 
     git clone https://github.com/pbruneau/VBmix.git
     R CMD build VBmix
