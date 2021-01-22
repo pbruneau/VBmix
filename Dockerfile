@@ -1,4 +1,4 @@
-FROM r-base:3.3.2
+FROM r-base:3.6.3
 
 ADD . /repo
 WORKDIR /repo
