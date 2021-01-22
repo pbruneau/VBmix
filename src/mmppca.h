@@ -20,11 +20,11 @@
 #include "utils.h"
 
 // declare all variables
-int K,L,d,q,i,j,k, a, b, interm1,nit,dummy, c_maxit;
-double val1,val2,val3, val4, val5, val6, val7, val8, val9, val10, lb, newlb, lbvar;
+
+int K,d,q,i,j,k,interm1,nit,dummy;
+double val1,val2,val3, val4, val5, val6, lb, newlb, lbvar;
 double param_alpha, param_nua, param_nub, param_numoment, param_taua, param_taub, param_taumoment, param_nustar;
 
-SEXP in_alpha, in_wmean, in_mumean;
 
 gsl_vector_view varview1;
 gsl_vector_view varview2;
@@ -37,15 +37,8 @@ gsl_vector_view grpview2;
 gsl_matrix_view tempview1;
 
 
-gsl_matrix *in_smp;
-gsl_matrix **in_smpfactors;
-gsl_vector *in_nonvoidfactors;
-gsl_vector *in_scales1;
-gsl_vector *in_scales2;
 
 gsl_matrix *stat_z;
-gsl_vector *stat_norms1;
-gsl_vector *stat_norms2;
 gsl_vector *stat_lb;
 gsl_matrix *stat_trace;
 gsl_vector *stat_nk;
@@ -68,8 +61,6 @@ gsl_matrix *model_mumean;
 gsl_vector **model_musigma;
 gsl_matrix **model_wmean;
 gsl_matrix **model_xsigma;
-gsl_matrix **model_x1mean;
-gsl_matrix ***model_x2mean;
 gsl_matrix **model_wsigma;
 
 gsl_matrix *temp_mat1;
@@ -86,11 +77,26 @@ gsl_vector *temp_vec2;
 gsl_vector *temp_vec3;
 gsl_vector *temp_vec4;
 gsl_vector *temp_vec5;
-gsl_vector *temp_vec6;
 gsl_eigen_symmv_workspace *temp_symmv1;
 
 double *mins;
 double *maxs;
+
+
+//unique to mmppca
+int L,a,b,c_maxit;
+double val7, val8, val9, val10;
+SEXP in_alpha, in_wmean, in_mumean;
+gsl_matrix *in_smp;
+gsl_matrix **in_smpfactors;
+gsl_vector *in_nonvoidfactors;
+gsl_vector *in_scales1;
+gsl_vector *in_scales2;
+gsl_vector *stat_norms1;
+gsl_vector *stat_norms2;
+gsl_matrix **model_x1mean;
+gsl_matrix ***model_x2mean;
+gsl_vector *temp_vec6;
 
 
 // functions
@@ -117,8 +123,6 @@ void displayMCurModel();
 void printDiagnostic();
 void setXsampleCov();
 void updateMTau();
-
-
 
 
 #endif
